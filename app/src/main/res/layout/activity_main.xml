@@ -31,7 +31,8 @@
                 android:layout_margin="5dp"
                 android:id="@+id/start"
                 android:layout_weight="1"
-                android:background="@color/colorStart"/>
+                android:background="@color/colorStart"
+                android:onClick="startClock"/>
 
             <Button
                 android:text="Stop"
@@ -42,5 +43,12 @@
                 android:layout_weight="1"
                 android:background="@color/colorStop"/>
         </LinearLayout>
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:layout_weight="0.08" />
     </LinearLayout>
 </RelativeLayout>
