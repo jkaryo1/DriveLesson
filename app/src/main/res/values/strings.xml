@@ -3,4 +3,6 @@
     <string name="date">Date</string>
     <string name="elapsed_time">Elapsed Time</string>
     <string name="hours">Hours</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
 </resources>
