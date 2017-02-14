@@ -41,14 +41,57 @@
                 android:layout_margin="5dp"
                 android:id="@+id/stop"
                 android:layout_weight="1"
-                android:background="@color/colorStop"/>
+                android:background="@color/colorStop"
+                android:onClick="stopClock"/>
         </LinearLayout>
 
-        <TextView
-            android:text="TextView"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView"
-            android:layout_weight="0.08" />
+            android:layout_height="69dp"
+            android:weightSum="7">
+
+            <TextView
+                android:text="@string/date"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/dateText"
+                android:layout_weight="3"
+                android:gravity="end"/>
+
+            <TextView
+                android:text="@string/date"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/dateView"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:weightSum="7"
+            android:gravity="center">
+
+            <TextView
+                android:text="@string/hours"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/hoursText"
+                android:layout_weight="3"
+                android:gravity="end"
+                android:textSize="25sp"/>
+
+            <TextView
+                android:text="@string/elapsed_time"
+                android:layout_width="wrap_content"
+                android:id="@+id/hoursView"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:layout_height="match_parent" />
+        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
