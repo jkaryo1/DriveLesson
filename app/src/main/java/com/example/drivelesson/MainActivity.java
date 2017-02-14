@@ -3,21 +3,22 @@ package com.example.drivelesson;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import java.util.Date;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    public final static float MIL_TO_HOUR = 60 * 60 * 1000;
+    public final static int SIXTY = 60;
+    public final static int THOUSAND = 1000;
 
     private Date startDate;
     private TextView dateView;
     private TextView hoursView;
     private Button start;
     private Button stop;
-    private float hourDiff;
 
 
     @Override
@@ -28,8 +29,17 @@ public class MainActivity extends AppCompatActivity {
         this.hoursView = (TextView) findViewById(R.id.hoursView);
         this.start = (Button) findViewById(R.id.start);
         this.stop = (Button) findViewById(R.id.stop);
-        this.hourDiff = 0;
+        Spinner lesson = (Spinner) findViewById(R.id.lessonOptions);
+        Spinner weather = (Spinner) findViewById(R.id.weatherOptions);
 
+        ArrayAdapter<CharSequence> lessonAdapter = ArrayAdapter.createFromResource(this,
+                R.array.lesson_array, android.R.layout.simple_spinner_item);
+        lessonAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        lesson.setAdapter(lessonAdapter);
+        ArrayAdapter<CharSequence> weatherAdapter = ArrayAdapter.createFromResource(this,
+                R.array.weather_array, android.R.layout.simple_spinner_item);
+        weatherAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        weather.setAdapter(weatherAdapter);
         this.dateView.setText(R.string.date);
         this.hoursView.setText(R.string.elapsed_time);
         this.start.setEnabled(true);
@@ -45,9 +55,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void stopClock(View view) {
+        long hourDiff;
+        long minDiff;
+        long milDiff;
         Date stopDate = new Date();
-        this.hourDiff = (stopDate.getTime() - this.startDate.getTime()) / MIL_TO_HOUR;
-        this.hoursView.setText(String.format("%.2f", hourDiff));
+        milDiff = stopDate.getTime() - this.startDate.getTime();
+        hourDiff = milDiff / (SIXTY * SIXTY * THOUSAND);
+        minDiff = (milDiff % (SIXTY * SIXTY * THOUSAND)) / (SIXTY * THOUSAND);
+        this.hoursView.setText(hourDiff + " hrs " + minDiff + " mins");
         this.start.setEnabled(true);
         this.stop.setEnabled(false);
     }

@@ -53,7 +53,8 @@
             android:layout_height="40dp"
             android:id="@+id/dateText"
             android:gravity="center"
-            android:textSize="30sp"/>
+            android:textSize="30sp"
+            android:textColor="@color/colorBlack"/>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -76,12 +77,13 @@
         </LinearLayout>
 
         <TextView
-            android:text="@string/hours"
+            android:text="@string/elapsed_time"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:id="@+id/hoursText"
             android:gravity="center"
-            android:textSize="30sp"/>
+            android:textSize="30sp"
+            android:textColor="@color/colorBlack"/>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -101,6 +103,62 @@
                 android:layout_margin="5dp"
                 android:background="@color/colorGrey"
                 android:textSize="20sp"/>
+
         </LinearLayout>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:checkedButton="@+id/day">
+
+                <RadioButton
+                    android:text="@string/day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/day"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginEnd="40dp"
+                    android:textSize="20sp"/>
+
+                <RadioButton
+                    android:text="@string/night"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/night"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="40dp"
+                    android:textSize="20sp"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:text="@string/lesson"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/lessonText"
+            android:textSize="20sp"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/lessonOptions" />
+
+        <TextView
+            android:text="@string/weather"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/weatherText"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/weatherOptions" />
+
     </LinearLayout>
 </RelativeLayout>

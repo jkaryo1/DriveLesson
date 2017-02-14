@@ -1,8 +1,21 @@
 <resources>
     <string name="app_name">DriveLesson</string>
     <string name="date">Date</string>
-    <string name="elapsed_time">Elapsed Time</string>
-    <string name="hours">Hours</string>
+    <string name="elapsed_time">Total Time</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
+    <string name="day">Day</string>
+    <string name="night">Night</string>
+    <string name="lesson">Lesson Type:</string>
+    <string name="weather">Weather Conditions:</string>
+    <string-array name="lesson_array">
+        <item>Residential</item>
+        <item>Commercial</item>
+        <item>Highway</item>
+    </string-array>
+    <string-array name="weather_array">
+        <item>Clear</item>
+        <item>Raining</item>
+        <item>Snow/Ice</item>
+    </string-array>
 </resources>
