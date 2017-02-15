@@ -18,8 +18,3 @@ pressed, at which point the start button is disabled until the stop button is
 pressed. When the start button is pressed, whatever is in the Total Time box is
 cleared until the stop button is pressed. This causes the elapsed time to be
 passed into the TextView.
-
-Lastly, I decided to show elapsed time slightly differently than the design.
-Instead of just showing hours passed as a decimal, I chose to show number of
-hours and minutes, as I find that to be easier to read than a decimal of the
-number of hours.
