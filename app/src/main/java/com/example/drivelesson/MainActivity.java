@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,14 +56,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void stopClock(View view) {
-        long hourDiff;
-        long minDiff;
+        float hourDiff;
         long milDiff;
+        String text;
         Date stopDate = new Date();
         milDiff = stopDate.getTime() - this.startDate.getTime();
-        hourDiff = milDiff / (SIXTY * SIXTY * THOUSAND);
-        minDiff = (milDiff % (SIXTY * SIXTY * THOUSAND)) / (SIXTY * THOUSAND);
-        this.hoursView.setText(hourDiff + " hrs " + minDiff + " mins");
+        hourDiff = (float)milDiff / (SIXTY * SIXTY * THOUSAND);
+        text = String.format(Locale.getDefault(), "%.2f", hourDiff) + " hours";
+        this.hoursView.setText(text);
         this.start.setEnabled(true);
         this.stop.setEnabled(false);
     }
